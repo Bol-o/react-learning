@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+.pers-det {
+  display: flex;
+  color: rgb(245, 170, 78);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
