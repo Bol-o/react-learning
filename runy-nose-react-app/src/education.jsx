@@ -13,7 +13,8 @@ function EduDetails(){
     
 
     const onButtonClick = () => {
-      const schoolNamen = document.getElementById('schoolName')
+      const schoolNamen = document.getElementById('schoolName') //this has to be inside this--
+      //--funtion as when outisde, the initial render doesn't load//
     // let schoolText = schoolNamen.value
 
      // alert(schoolNamen.value)
