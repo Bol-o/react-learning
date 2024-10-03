@@ -82,6 +82,8 @@ function PersDetails(){
     submitResultName.textContent = `ye name is ${name}`
     submitResultSurname.textContent = `ye name is ${secondName}`
     submitResultEmail.textContent = `ye name is ${poczta}`
+
+    console.log('wtf?');
     
     }
   
