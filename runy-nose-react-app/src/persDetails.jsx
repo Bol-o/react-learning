@@ -3,34 +3,88 @@ import './App.css'
 
 //const [submButt, setSubmButt] = useState('')
 
-function submitButton(){
-  var submBut = document.getElementById('edit');
-  submBut.innerText = 'Edit'
+
+
+function editButton(){
+  var editBut = document.getElementById('edit');
+  editBut.innerText = 'Edit'
+  
   
 } 
 
 
+
 function PersDetails(){
-
+ 
   const [name, setName] = useState('');
+  const [poczta, setpoczta] = useState('');
+  const [secondName, setsecondName] = useState('');
+  
 
-  const onButtonClick = () => {
+  const addButton = () => {
+    const email = document.getElementById('email')
+   
     const firstName = document.getElementById('firstName')
+    
+    const secName = document.getElementById('secName')
+    
+    
+    //const results = document.getElementById('results')
 
-    setName(firstName.value)
-    firstName.value = '';
+    if(!firstName.value  || !secName.value || !email.value){
+      return
+    }  
 
    
-    submitButton()
+    setName(firstName.value)
+    console.log(firstName);
+    firstName.value = 'submit or edit';
+
+
+    setsecondName(secName.value)
+    secName.value = 'submit or edit';
+
+    setpoczta(email.value)
+    email.value = "submit or edit";
+
+    
+   
+    editButton()
+    
   }
 
   const editName = () => {
+    
 
+    // const emailAdd = document.getElementById('emaIl')
     firstName.value = name
-    setName('')
+   // setName('')
+    secName.value = secondName
+    if(secName){
+      console.log('secname has value: ' + true);
+     }
+   // setsecondName('')
+   
+   email.value = poczta
+  
 
+    
 
   }
+  function submitIt(){
+
+    var submitResultName = document.getElementById('submit-result-name')
+    var submitResultSurname = document.getElementById('submit-result-surname')
+    var submitResultEmail = document.getElementById('submit-result-email')
+    
+    
+    
+    submitResultName.textContent = `ye name is ${name}`
+    submitResultSurname.textContent = `ye name is ${secondName}`
+    submitResultEmail.textContent = `ye name is ${poczta}`
+    
+    }
+  
 
 
 
@@ -43,9 +97,10 @@ function PersDetails(){
     <form>
       <label>Enter your first name:
         <textarea type="text" id="firstName"> </textarea>
+     
         <button
             type="button"
-            onClick={onButtonClick}
+            onClick={addButton}
             >Add</button>
 
         <button 
@@ -58,23 +113,27 @@ function PersDetails(){
 
         </button>
       </label>
-      <div>REsults: {name}</div>
+      <label>Enter your second name::</label>
+        
+      <textarea id="secName" type="text"></textarea>
      
     </form>
+   
     <form>
-      <label>Enter your second name:
-        <input type="text" />
-      </label>
+      <label id>Enter your email</label>
+        
+        <input type="email" id="email" />
+      
     </form>
-    <form>
-      <label>Enter your email address:
-        <input type="email" />
-      </label>
-    </form>
-
+   
+   
     
     </div>
-    <button id="submit">Submit</button>
+    <div id="results"></div>
+    <button id="submit" onClick={submitIt}>Submit</button>
+    <div id="submit-result-name"></div>
+    <div id="submit-result-surname"></div>
+    <div id="submit-result-email"></div>
     </>
     )
 
