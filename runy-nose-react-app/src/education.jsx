@@ -27,15 +27,17 @@ function EduDetails(){
 
     return (
         <>
-        <div className="pers-det"><h1>education history</h1>
-    
-
-
+        <div className="pers-det">
+          
+          <h1>education history</h1>
+          
     <form>
-      <label for="edu-His">Enter your education history:</label>
+         <label for="edu-His">Enter your education history:</label>
          
-      <textarea  id="edu-His"  >your education goes here</textarea>
+         <textarea  id="edu-His"  >your education goes here</textarea>
+              
         <form action="">
+
             <label for="school-name">School name :</label> 
             
             <input type="text" name="school-name" id="schoolName"  />
@@ -45,7 +47,7 @@ function EduDetails(){
             onClick={onButtonClick}
             >Add</button>
             
-      </form>
+        </form>
       
        
 

@@ -80,8 +80,8 @@ function PersDetails(){
     
     
     submitResultName.textContent = `ye name is ${name}`
-    submitResultSurname.textContent = `ye name is ${secondName}`
-    submitResultEmail.textContent = `ye name is ${poczta}`
+    submitResultSurname.textContent = `ye surname is ${secondName}`
+    submitResultEmail.textContent = `ye email is ${poczta}`
 
     console.log('wtf?');
     
@@ -92,7 +92,7 @@ function PersDetails(){
 
     return (
         <>
-        <div className="pers-det"><h1>personal details</h1>
+        <div className="pers-det"><h1>working history</h1>
     
 
 
