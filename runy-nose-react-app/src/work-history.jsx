@@ -7,13 +7,17 @@ function WorkHistory(){
     const [items, setItems] = useState([])
 function addJob(){
     var bronxDemon = document.getElementById("bronx-demon")
+    var bronxDemon2 = document.getElementById("bronx-demon2")
 if (!inputValue){
     
     bronxDemon.placeholder = 'type summin bronx demon'
+    bronxDemon2.placeholder = 'type summin bronx demon'
     alert('type summin bronx demon')
+    alert(bronxDemon.placeholder)
     return
 }
 bronxDemon.placeholder = 'Enter item'
+bronxDemon2.placeholder = 'Enter item'
 setItems([...items, inputValue])
 setInputValue('')
 
@@ -31,7 +35,13 @@ return(
     <div >
         
         <div>
-            <input type="text" className="pers-det" />
+            <input 
+            id="bronx-demon"
+            type="text" 
+            className="pers-det"             
+             value={inputValue}
+             onChange={(e) => setInputValue(e.target.value)}
+             placeholder="Enter item" />
         </div>
                
     </div>
@@ -63,11 +73,11 @@ return(
         </div>
 
         <input
-        id="bronx-demon"
+        id="bronx-demon2"
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter item"
+        placeholder="Enter itemnnn"
       />
     </form>
         <div>
