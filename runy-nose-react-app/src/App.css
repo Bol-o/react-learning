@@ -51,3 +51,7 @@ form {
   justify-content: center;
   align-items: center;
 }
+#job-list{
+
+  border: solid black ;
+}

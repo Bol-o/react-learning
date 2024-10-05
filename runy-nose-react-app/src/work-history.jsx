@@ -5,21 +5,23 @@ import './App.css'
 function WorkHistory(){
     const [inputValue, setInputValue] = useState("")
     const [items, setItems] = useState([])
+    const [ulList, setUlList] = useState([])
 function addJob(){
     var bronxDemon = document.getElementById("bronx-demon")
-    var bronxDemon2 = document.getElementById("bronx-demon2")
+    // var bronxDemon2 = document.getElementById("bronx-demon2")
 if (!inputValue){
     
     bronxDemon.placeholder = 'type summin bronx demon'
-    bronxDemon2.placeholder = 'type summin bronx demon'
+    // bronxDemon2.placeholder = 'type summin bronx demon'
     alert('type summin bronx demon')
     alert(bronxDemon.placeholder)
     return
 }
 bronxDemon.placeholder = 'Enter item'
-bronxDemon2.placeholder = 'Enter item'
+// bronxDemon2.placeholder = 'Enter item'
 setItems([...items, inputValue])
 setInputValue('')
+setUlList([''])
 
 
 }
@@ -35,13 +37,13 @@ return(
     <div >
         
         <div>
-            <input 
+            <textarea
             id="bronx-demon"
             type="text" 
             className="pers-det"             
              value={inputValue}
              onChange={(e) => setInputValue(e.target.value)}
-             placeholder="Enter item" />
+             placeholder="Enter item" ></textarea>
         </div>
                
     </div>
@@ -49,12 +51,14 @@ return(
 
 
         <div>
-          <ul id="job-list">
+            {ulList.map((item, index) => (
+          <ul id="job-list" key={index}>{item}
           {items.map((item, index) => (
                 <li key={index}>{item}</li>
             ))}
 
           </ul>
+            ))}
         </div>
     </form>
     
@@ -62,25 +66,25 @@ return(
 
 
     <div>
-            <button type="button" onClick={addJob}>Add job</button>
+            <button type="button" onClick={addJob} >Add job</button>
           </div>
-          <div>
+          {/* <div>
           <ul id="job-list">
             {items.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li className="jobs" key={index}>{item}</li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
-        <input
+        {/* <input  
         id="bronx-demon2"
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter itemnnn"
-      />
+        placeholder="Enter item"
+      /> */}
     </form>
-        <div>
+        {/* <div>
           <ul id="job-list">
             is meee
           </ul>
@@ -89,7 +93,7 @@ return(
           <ul id="job-list">
             is meee
           </ul>
-        </div>
+        </div> */}
         
           
 

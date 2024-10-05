@@ -92,7 +92,7 @@ function PersDetails(){
 
     return (
         <>
-        <div className="pers-det"><h1>working history</h1>
+        <div className="pers-det"><h1>Personal details</h1>
     
 
 
