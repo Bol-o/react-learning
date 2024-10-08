@@ -7,18 +7,23 @@ function WorkHistory(){
     const [items, setItems] = useState([])
     const [ulList, setUlList] = useState([])
 function addJob(){
-    var bronxDemon = document.getElementById("bronx-demon")
+    alert("first alret" + inputValue)
+    // var bronxDemon = document.getElementById("bronx-demon")
     // var bronxDemon2 = document.getElementById("bronx-demon2")
 if (!inputValue){
-    
-    bronxDemon.placeholder = 'type summin bronx demon'
+    alert(inputValue)
+    alert('type summin bronx demon')  
+    // inputValue = 'type summin bronx demon'
     // bronxDemon2.placeholder = 'type summin bronx demon'
-    alert('type summin bronx demon')
-    alert(bronxDemon.placeholder)
+    
+    alert(inputValue)
     return
 }
-bronxDemon.placeholder = 'Enter item'
+alert('second alert: ' + inputValue)
+
+alert('third alert: ' + inputValue)
 // bronxDemon2.placeholder = 'Enter item'
+alert(inputValue)
 setItems([...items, inputValue])
 setInputValue('')
 setUlList([''])
@@ -43,7 +48,7 @@ return(
             className="pers-det"             
              value={inputValue}
              onChange={(e) => setInputValue(e.target.value)}
-             placeholder="Enter item" ></textarea>
+             placeholder={inputValue ? inputValue : 'enter jobbbb'} ></textarea>
         </div>
                
     </div>
