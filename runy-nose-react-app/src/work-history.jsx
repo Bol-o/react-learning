@@ -7,23 +7,23 @@ function WorkHistory(){
     const [items, setItems] = useState([])
     const [ulList, setUlList] = useState([])
 function addJob(){
-    alert("first alret" + inputValue)
+    // alert("first alret" + inputValue)
     // var bronxDemon = document.getElementById("bronx-demon")
     // var bronxDemon2 = document.getElementById("bronx-demon2")
 if (!inputValue){
-    alert(inputValue)
+    // alert(inputValue)
     alert('type summin bronx demon')  
     // inputValue = 'type summin bronx demon'
     // bronxDemon2.placeholder = 'type summin bronx demon'
     
-    alert(inputValue)
+    // alert(inputValue)
     return
 }
-alert('second alert: ' + inputValue)
+// alert('second alert: ' + inputValue)
 
-alert('third alert: ' + inputValue)
+// alert('third alert: ' + inputValue)
 // bronxDemon2.placeholder = 'Enter item'
-alert(inputValue)
+// alert(inputValue)
 setItems([...items, inputValue])
 setInputValue('')
 setUlList([''])
@@ -34,33 +34,28 @@ setUlList([''])
 
 return(
     <>
-
-
-    <div className="pers-det">
-    <h1 >working history</h1>
-    <form action="">
-    <div >
-        
-        <div>
+      <div className="pers-det">
+        <h1 >working history</h1>
+          <form action="">
+            
+       <div>        
+          <div>
             <textarea
-            id="bronx-demon"
-            type="text" 
-            className="pers-det"             
+             id="bronx-demon"
+             type="text" 
+             className="pers-det"             
              value={inputValue}
              onChange={(e) => setInputValue(e.target.value)}
-             placeholder={inputValue ? inputValue : 'enter jobbbb'} ></textarea>
+             placeholder={inputValue ? inputValue : 'enter jobbbb'}>
+            </textarea>
+          </div>               
         </div>
-               
-    </div>
         
-
-
         <div>
             {ulList.map((item, index) => (
           <ul id="job-list" key={index}>{item}
-          {items.map((item, index) => (
-                <li key={index}>{item}</li>
-            ))}
+          
+          {items.map((item, index) => ( <li key={index}>{item}</li>))}
 
           </ul>
             ))}
